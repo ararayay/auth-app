@@ -1,3 +1,5 @@
+from drf_spectacular.utils import extend_schema
+
 from rest_framework import permissions, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -9,8 +11,11 @@ from auth_app.utils.tokens import get_tokens_for_user
 class RegisterAPIView(APIView):
     """Регистрация пользователя"""
     permission_classes = [permissions.AllowAny]
+    serializer_class = RegisterSerializer
 
+    @extend_schema(tags=['Auth'])
     def post(self, request, *args, **kwargs) -> Response:
+        """Регистрация"""
         try:
             serializer = RegisterSerializer(data=request.data)
             if not serializer.is_valid():
