@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from rest_framework_simplejwt.views import TokenRefreshView
 
-from auth_app.views import RegisterAPIView, LoginAPIView, LogoutAPIView
+from auth_app.views import LoginAPIView, LogoutAPIView, RegisterAPIView, UserAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -11,4 +11,5 @@ urlpatterns = [
     path('login/', LoginAPIView.as_view()),
     path('logout/', LogoutAPIView.as_view()),
     path('token/refresh/', TokenRefreshView.as_view()),
+    path('user/', UserAPIView.as_view()),
 ]

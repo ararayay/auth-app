@@ -5,22 +5,17 @@ from auth_app.models import User
 
 
 class UserSerializer(ModelSerializer):
-    password = serializers.CharField(write_only=True)
-    password2 = serializers.CharField(write_only=True)
-
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'email', 'password', 'password2')
+        fields = ('id', 'username', 'first_name', 'last_name', 'second_name', 'email')
+        read_only_fields = ('id', 'username')
 
     def validate_email(self, value):
-        if User.objects.filter(email=value).exists():
+        queryset = User.objects.filter(email=value)
+        if self.instance:
+            queryset = queryset.exclude(pk=self.instance.pk)
+        if queryset.exists():
             raise serializers.ValidationError('User with this email already exists')
         return value
 
-    def validate(self, attrs):
-        if attrs['password'] != attrs['password2']:
-            raise serializers.ValidationError({'message': 'Passwords do not match'})
-        return attrs
 
-    def create(self, validated_data):
-        return User.create_user(validated_data)
