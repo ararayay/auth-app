@@ -9,6 +9,7 @@ from auth_app.views.access.permissions import PermissionAPIView
 from auth_app.views.access.role_permissions import RolePermissionAPIView
 from auth_app.views.access.roles import RoleAPIView
 from auth_app.views.access.user_roles import UserRoleAPIView
+from auth_app.views.access.users import UserListAPIView
 from auth_app.views.mock.projects import ProjectsAPIView
 from auth_app.views.mock.reports import ReportsAPIView
 
@@ -31,4 +32,5 @@ urlpatterns = [
     path('access/permissions/', PermissionAPIView.as_view()),
     path('access/user-roles/', UserRoleAPIView.as_view()),
     path('access/role-permissions/', RolePermissionAPIView.as_view()),
+    path('access/users/', UserListAPIView.as_view()),
 ]
