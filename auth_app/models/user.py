@@ -1,4 +1,4 @@
-import re, uuid
+import uuid
 from transliterate import translit
 
 from django.contrib import admin
@@ -8,7 +8,7 @@ from django.db import models
 
 class User(AbstractUser):
     email = models.EmailField(unique=True)
-    second_name = models.CharField(max_length = 50, blank=True, null=True)
+    second_name = models.CharField(max_length=50, blank=True, null=True)
 
     class Meta:
         verbose_name = 'Пользователь'
