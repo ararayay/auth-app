@@ -17,7 +17,7 @@ http://127.0.0.1:8000/api/schema/swagger-ui/
 
 ---
 
-# Используемые технологии
+## Используемые технологии
 
 - Python
 - Django
@@ -27,7 +27,7 @@ http://127.0.0.1:8000/api/schema/swagger-ui/
 
 ---
 
-# Authentication
+## Authentication
 
 Для аутентификации используется JWT.
 
@@ -42,13 +42,13 @@ http://127.0.0.1:8000/api/schema/swagger-ui/
 
 ---
 
-# Logout
+## Logout
 
 При logout: refresh token добавляется в blacklist.
 
 ---
 
-# Soft Delete пользователя
+## Soft Delete пользователя
 
 Удаление пользователя реализовано через soft delete.
 
@@ -60,7 +60,7 @@ http://127.0.0.1:8000/api/schema/swagger-ui/
 
 ---
 
-# Authorization System
+## Authorization System
 
 В проекте реализована собственная RBAC-система (Role-Based Access Control). Права доступа определяются ролями пользователя. Основные сущности:
 
@@ -98,9 +98,9 @@ email: user@example2.com
 password: ivanivanov
 ---
 
-# API Endpoints
+## API Endpoints
 
-## Authentication
+### Authentication
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -124,7 +124,7 @@ password: ivanivanov
 
 ---
 
-# Запуск проекта
+## Запуск проекта
 
 Чтобы запустить проект, нужно:
 1. Установить зависимости
