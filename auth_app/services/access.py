@@ -17,3 +17,8 @@ class HasAccessPermission(BasePermission):
             permission__resource=self.resource,
             permission__action=self.action
         ).exists()
+
+
+class AdminManagePermission(HasAccessPermission):
+    resource = 'admin'
+    action = 'manage'
