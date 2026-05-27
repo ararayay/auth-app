@@ -5,6 +5,8 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from rest_framework_simplejwt.views import TokenRefreshView
 
 from auth_app.views import LoginAPIView, LogoutAPIView, RegisterAPIView, UserAPIView
+from auth_app.views.mock.projects import ProjectsAPIView
+from auth_app.views.mock.reports import ReportsAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -17,4 +19,7 @@ urlpatterns = [
     path('logout/', LogoutAPIView.as_view()),
     path('token/refresh/', TokenRefreshView.as_view()),
     path('user/', UserAPIView.as_view()),
+
+    path('projects/', ProjectsAPIView.as_view()),
+    path('reports/', ReportsAPIView.as_view()),
 ]
