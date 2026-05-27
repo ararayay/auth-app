@@ -81,6 +81,21 @@ User -> Role -> Permission -> Resource + Action
 2. Manager - работает с проектами: projects:create, projects:read 
 3. Admin - администратор системы, может управлять ролями, назначать permissions, назначать роли пользователям.
 
+Созданы тестовые пользователи:
+1. Admin
+
+email: example@gmail.com  
+password: admin123
+
+2. Manager
+
+email: user@example3.com  
+password: petrpetrov
+
+3. Employee
+
+email: user@example2.com 
+password: ivanivanov
 ---
 
 # API Endpoints
@@ -129,3 +144,8 @@ python manage.py migrate
 ```bash
 python manage.py runserver
 ```
+
+4. Загрузить тестовые данные
+
+```bash
+python manage.py loaddata auth_app/fixtures/initial_data.json
